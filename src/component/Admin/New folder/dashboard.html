@@ -1,0 +1,49 @@
+<<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+<div className="dashboard">
+      <MetaData title="Dashboard - Admin Panel" />
+      <Sidebar />
+
+      <div className="dashboardContainer">
+        <Typography component="h1">Dashboard</Typography>
+
+        <div className="dashboardSummary">
+          <div>
+            <p>
+              Total Amount <br /> ₹{totalAmount}
+            </p>
+          </div>
+          <div className="dashboardSummaryBox2">
+            <Link to="/admin/products">
+              <p>Product</p>
+              <p>{products && products.length}</p>
+            </Link>
+            <Link to="/admin/orders">
+              <p>Orders</p>
+              <p>{orders && orders.length}</p>
+            </Link>
+            <Link to="/admin/users">
+              <p>Users</p>
+              <p>{users && users.length}</p>
+            </Link>
+          </div>
+        </div>
+
+        <div className="lineChart">
+          <Line data={lineState} />
+        </div>
+
+        <div className="doughnutChart">
+          <Doughnut data={doughnutState} />
+        </div>
+      </div>
+    </div>
+</body>
+</html>
